@@ -1,5 +1,4 @@
 FROM alpine:3.5
-MAINTAINER Yifei Kong <kong@yifei.me>
 
 ENV NGINX_VER 1.10.3
 
@@ -20,11 +19,6 @@ RUN apk add --update git openssl-dev pcre-dev zlib-dev wget build-base && \
     rm -rf /var/cache/apk/*
 
 ADD nginx.conf /opt/nginx/conf/nginx.conf
-#如果需要https支持则注释上一行并解注释下两行
-#ADD nginx-https.conf /opt/nginx/conf/nginx.conf
-#ADD chained.pem /etc/ssl/certs/
-#ADD domain.key /etc/ssl/private/
-#ADD dhparam.pem /etc/ssl/certs/
 
 EXPOSE 80
 CMD ["/opt/nginx/sbin/nginx", "-g", "daemon off;"]
