@@ -6,7 +6,7 @@ RUN apk add --update git openssl-dev pcre-dev zlib-dev wget build-base && \
     mkdir src && cd src && \
     wget http://nginx.org/download/nginx-${NGINX_VER}.tar.gz && \
     tar xzf nginx-${NGINX_VER}.tar.gz && \
-    git clone https://github.com/bettermanbao/ngx_http_google_filter_module && \
+    git clone https://github.com/cuber/ngx_http_google_filter_module && \
     git clone https://github.com/yaoweibin/ngx_http_substitutions_filter_module && \
     cd nginx-${NGINX_VER} && \
     ./configure --prefix=/opt/nginx \
